@@ -48,7 +48,7 @@ function App() {
     setTasks({
       title: "",
       date: "",
-      status: "",
+      status: false,
       priority: false,
     });
   };
@@ -68,7 +68,21 @@ const handleEdit = (task, id) => {
   setTasks(task); // Set the current task for editing
   handleDelete(id);
 };
+ const handleState = (idx) =>
+ {
+  const newList = taskList.map((item, index) => {
+    if (index == idx){
+      return{
+        ...item,
+        status: !item.status,
+      };
+    }
+    return item;
 
+    
+  });
+  setTasklist(newList);
+ }
   
 
 
@@ -103,6 +117,7 @@ const handleEdit = (task, id) => {
                   checked={tasks.priority}
                   />
               </div>
+             
 
               <button className='bg-blue-400 px-4 py-2 min-w-[6rem] rounded'
                 onClick={()=> handleAdd()}
@@ -115,6 +130,9 @@ const handleEdit = (task, id) => {
               <div className='text-xl w-[300px]'>{task.title}</div>
               <div className='text-base w-[150px]'>{task.date}</div>
               <div className='text-base w-[60px]'>{task.priority ? "P":"N"}</div>
+              <div>
+                <input type = "checkbox" onChange={() => handleState(idx)}/>
+              </div>
               <button className='text-blue-600 font-bold'onClick={() => handleEdit(task,idx)}>Edit</button>
               <button className='text-red-600 font-bold' onClick={() => handleDelete(idx)}>Delete</button>
             </div>
