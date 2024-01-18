@@ -90,8 +90,8 @@ const handleEdit = (task, id) => {
 
 
   return (
-    <div className="App px-4">
-      <div className='h-screen w-auto bg-blue-100 px-6'>
+    <div className="App">
+      <div className='h-screen pt-6 w-auto bg-blue-100 px-6 flex flex-col items-center'>
 
 
       <AddListForm

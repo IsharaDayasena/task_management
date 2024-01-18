@@ -26,7 +26,7 @@ const AddListForm = ({tasks,handleAdd,handleOnChange}) => {
     ];
   return (
     <div>
-        <div className='flex items-center gap-16'>
+        <div className='flex items-center gap-16  w-full max-w-[800px]'>
           
            {formElement.map((formItem, id) => (<div className='flex flex-col'>
             <label>{formItem.label}</label>
@@ -57,7 +57,7 @@ const AddListForm = ({tasks,handleAdd,handleOnChange}) => {
                     checked={tasks.priority}
                 />
             </div> */}
-            <button className='bg-blue-400 px-4 py-2 min-w-[6rem] rounded'
+            <button className='bg-blue-400 hover:bg-green-400 transition-colors duration-300 ease-linear px-4 py-2 min-w-[6rem] rounded'
               onClick={()=> handleAdd()}
             >Add</button>
       
