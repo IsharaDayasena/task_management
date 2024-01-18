@@ -3,7 +3,7 @@ import React from 'react'
 const Todolist = ({taskList,handleDelete,handleEdit,handleState}) => {
   return (
     <div className="mt-4 flex flex-col gap-2">
-          {taskList.map((task, idx) => (
+          {taskList?.map((task, idx) => (
             <div key={idx} className='w-full flex items-center gap-2  py-4 px-3 bg-sky-300 rounded'>
               <div className='text-xl w-[300px]'>{task.title}</div>
               <div className='text-base w-[150px]'>{task.date}</div>
